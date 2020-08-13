@@ -2,6 +2,7 @@
   <div class="container">
     <h1><%= @cocktail.name %></h1>
     <p>Best classical cocktail</p>
+    <%= link_to "Back to list", cocktails_path(@cocktail), class:"btn btn-ghost" %>
   </div>
 </div>
 
