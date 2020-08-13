@@ -1,0 +1,38 @@
+<div class="banner" style="background-image: linear-gradient(rgba(150,150,150,0.4),rgba(150,150,150,0.4)), url(https://cdn-image.realsimple.com/sites/default/files/styles/video_image_1/public/mojito-recipe.jpg?itok=yP6SJBBr);">
+  <div class="container">
+    <h1><%= @cocktail.name %></h1>
+    <p>Best classical cocktail</p>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="d-flex justify-content-between my-3">
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Ingredients</h5>
+    <% @cocktail.doses.each do |dose|%>
+    <p class="card-text">
+      <ul>
+        <li><%= dose.description %> of <%= dose.ingredient.name %></li>
+      </ul>
+    </p>
+    <% end %>
+    <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail), class:"card-link" %>
+    <%= link_to "Back to list", new_cocktail_dose_path(@cocktail), class:"card-link" %>
+  </div>
+</div>
+
+<div class="card" id="recipe" style="width: 48rem;">
+  <div class="card-body">
+    <h5 class="card-title">Recipe</h5>
+    <p class="card-text">Step 1
+    </p>
+
+  </div>
+</div>
+
+</div>
+</div>
+
+

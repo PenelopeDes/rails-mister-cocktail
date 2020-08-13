@@ -1,0 +1,9 @@
+<div class="text-center m-3">
+  <h1 class="m-3">Let's add a new cocktail</h1>
+  <div class="container w-50">
+    <%= simple_form_for [ @cocktail] do |f| %>
+      <%= f.input :name, placeholder: "Mojito" %>
+      <%= f.submit "Add a new restaurant", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
