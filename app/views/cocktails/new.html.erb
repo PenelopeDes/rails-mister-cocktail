@@ -3,7 +3,11 @@
   <div class="container w-50">
     <%= simple_form_for [ @cocktail] do |f| %>
       <%= f.input :name, placeholder: "Mojito" %>
+      <%= f.input :photo, as: :file %>
       <%= f.submit "Add a new restaurant", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
+
+<%= cl_image_tag("https://res.cloudinary.com/duqqidex8/image/upload/v1597398758/wkecsf9im9zzz4klverz.jpg",
+      width: 400, height: 300, crop: :fill) %>

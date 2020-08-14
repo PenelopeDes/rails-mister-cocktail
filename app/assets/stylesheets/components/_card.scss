@@ -7,6 +7,7 @@
 }
 
 .cards {
+  margin-top: 50px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
@@ -14,7 +15,7 @@
 
 .card-category {
   text-decoration: none;
-  background-image: linear-gradient(rgba(100,100,100,0.3), rgba(100,100,100,0.3)), asset-url('mojito.jpg');
+  // background-image: linear-gradient(rgba(100,100,100,0.3), rgba(100,100,100,0.3)), asset-url('mojito.jpg');
   background-size: cover;
   background-position: center;
   height: 500px;
@@ -27,16 +28,51 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.card-remove-link {
+  color: #ffffff;
+  border-radius: 50%;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  transform: rotate(45deg);
+  opacity: 0.8;
+  &:hover {
+    color: white;
+    text-decoration: none;
+    opacity: 1;
+  }
+}
+
+.card-category-text {
+  text-decoration: none;
+  color: white;
+  opacity: 0.3;
+  &:hover {
+  opacity: 1;
+  color: white;
+  text-decoration: none;
+  }
 }
 
 a {
     text-decoration: none;
-    color: rgb(50,50,50);
+    color: black;
+    opacity: 0.3;
 }
 
 a:hover {
-  color: rgb(41,83,6);
+  opacity: 1;
   text-decoration: none;
+  color: black;
 }
 
 // Smallest device

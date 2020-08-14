@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(150,150,150,0.4),rgba(150,150,150,0.4)), url(https://cdn-image.realsimple.com/sites/default/files/styles/video_image_1/public/mojito-recipe.jpg?itok=yP6SJBBr);">
+<div class="banner" style="background-image: linear-gradient(rgba(100,100,100,0.3), rgba(100,100,100,0.3)), url('<%= cl_image_path @cocktail.photo.key, crop: :fill %>')">
   <div class="container">
     <h1><%= @cocktail.name %></h1>
     <p>Best classical cocktail</p>
@@ -15,12 +15,16 @@
     <% @cocktail.doses.each do |dose|%>
     <p class="card-text">
       <ul>
-        <li><%= dose.description %> of <%= dose.ingredient.name %></li>
+        <li><%= dose.description %> of <%= dose.ingredient.name %>
+          <%= link_to cocktail_dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+                  <i class="fa fa-trash destroy_dose"></i>
+                <% end %>
+        </li>
       </ul>
     </p>
     <% end %>
     <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail), class:"card-link" %>
-    <%= link_to "Back to list", new_cocktail_dose_path(@cocktail), class:"card-link" %>
+    <%= link_to "Back to list", cocktails_path, class:"card-link" %>
   </div>
 </div>
 
