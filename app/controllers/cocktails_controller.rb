@@ -3,7 +3,7 @@ class CocktailsController < ApplicationController
     @cocktails = Cocktail.all
 
     if params[:search]
-      @cocktails = @cocktails.select { |cocktail| cocktail.name.start_with?(params[:search])}
+      @cocktails = @cocktails.select { |cocktail| cocktail.name.downcase.start_with?(params[:search].downcase)}
     else
       @cocktails = Cocktail.all
     end
@@ -32,6 +32,6 @@ class CocktailsController < ApplicationController
   private
 
   def params_cocktail
-    params.require(:cocktail).permit(:name, :photo)
+    params.require(:cocktail).permit(:name, :photo, :description)
   end
 end
